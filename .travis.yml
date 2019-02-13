@@ -12,7 +12,6 @@ addons:
     - g++-4.8
 env:
   matrix:
-  - TRAVIS_NODE_VERSION="0.8"
   - TRAVIS_NODE_VERSION="0.10"
   - TRAVIS_NODE_VERSION="0.12"
   - TRAVIS_NODE_VERSION="4"
@@ -22,6 +21,7 @@ env:
   - TRAVIS_NODE_VERSION="8"
   - TRAVIS_NODE_VERSION="9"
   - TRAVIS_NODE_VERSION="10"
+  - TRAVIS_NODE_VERSION="11"
 matrix:
   exclude:
     - os: osx
