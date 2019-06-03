@@ -1,23 +1,16 @@
 /*********************************************************************
  * NAN - Native Abstractions for Node.js
  *
- * Copyright (c) 2018 NAN contributors
+ * Copyright (c) 2019 NAN contributors
  *
  * MIT License <https://github.com/nodejs/nan/blob/master/LICENSE.md>
  ********************************************************************/
 
 const test     = require('tap').test
     , testRoot = require('path').resolve(__dirname, '..')
-    , bindings = require('bindings')({ module_root: testRoot, bindings: 'gc' })
-    , gc = require('./gc-fn');
+    , bindings = require('bindings')({ module_root: testRoot, bindings: 'maybe' })
 
-test('gc', function (t) {
-  t.plan(3);
-
-  t.type(bindings.hook, 'function');
-  t.type(bindings.check, 'function');
-
-  bindings.hook();
-  gc();
-  t.ok(bindings.check());
+test('maybe', function (t) {
+    t.plan(1);
+    t.ok(bindings.test());
 });
